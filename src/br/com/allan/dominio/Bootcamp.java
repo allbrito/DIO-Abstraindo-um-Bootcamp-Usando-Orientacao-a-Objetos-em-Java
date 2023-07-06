@@ -13,23 +13,22 @@ public class Bootcamp {
     private Set<Dev> devsInscritos = new HashSet<>();
     private Set<Conteudo> conteudos = new LinkedHashSet<>();
 
-    private final LocalDate dataInicial = LocalDate.now();
-    private final LocalDate dataFinal = dataInicial.plusDays(45);
+    private final LocalDate dataInicial;
+    private final LocalDate dataFinal;
+
+    public Bootcamp(String nome, String descricao) {
+        this.nome = nome;
+        this.descricao = descricao;
+        this.dataInicial = LocalDate.now();
+        this.dataFinal = this.dataInicial.plusDays(45);
+    }
 
     public String getNome() {
         return nome;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
     public String getDescricao() {
         return descricao;
-    }
-
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
     }
 
     public Set<Dev> getDevsInscritos() {
