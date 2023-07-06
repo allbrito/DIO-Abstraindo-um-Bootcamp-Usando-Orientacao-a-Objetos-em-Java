@@ -16,12 +16,12 @@ public class Dev {
     }
 
     public void inscreverBootcamp(Bootcamp bootcamp) {
-        this.conteudosConcluidos.addAll(bootcamp.getConteudos());
+        this.conteudosInscritos.addAll(bootcamp.getConteudos());
         bootcamp.getDevsInscritos().add(this);
     }
 
     public void progredir() {
-        Optional<Conteudo> conteudo = this.conteudosConcluidos.stream().findFirst();
+        Optional<Conteudo> conteudo = this.conteudosInscritos.stream().findFirst();
         if (conteudo.isPresent()) {
             this.conteudosConcluidos.add(conteudo.get());
             this.conteudosInscritos.remove(conteudo.get());
